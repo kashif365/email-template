@@ -21,10 +21,8 @@
       .h1-text{font-size:32px!important;line-height:1.15!important;max-width:240px!important;}
       .hero-copy{max-width:240px!important;}
       .hero-pad{padding-left:20px!important;padding-right:20px!important;padding-bottom:18px!important;}
-      .hero-bg-img{display:none!important;}
-      .hero-bee-img{display:none!important;}
-      .hero-frame{display:none!important;}
-      .hero-frame-mobile{display:block!important;}
+      .hero-left{display:block!important;width:100%!important;}
+      .hero-right{display:block!important;width:100%!important;text-align:center!important;padding:0 0 24px 0!important;}
       /* Visibility section */
       .vis-left{display:block!important;width:100%!important;padding:28px 20px 16px!important;text-align:center!important;}
       .vis-right{display:block!important;width:100%!important;text-align:center!important;padding:0 20px 28px!important;}
@@ -39,6 +37,8 @@
       .edit-right{display:block!important;width:100%!important;text-align:center!important;}
       /* General */
       .sp{padding-left:16px!important;padding-right:16px!important;}
+      /* Cover-sized background images crop unpredictably once a section stacks taller on mobile */
+      .cover-bg{background-image:none!important;}
     }
   </style>
 </head>
@@ -58,72 +58,79 @@
          §1  H E R O
          ═══════════════════════════════════ -->
     <tr>
-      <td style="background:linear-gradient(140deg,#FFF3CC 0%,#FFF9E8 45%,#FFFDF5 100%);padding:0;position:relative;">
-        <img class="hero-bg-img" src="assest-3/hero-section-bg.png" width="320" alt=""
-             style="display:block;position:absolute;top:0;right:0;width:320px;height:auto;z-index:0;">
-        <div class="hero-frame"
-             style="position:absolute;top:70px;right:24px;width:230px;height:230px;
-                    border-radius:50%;border:5px solid #FFB800;box-sizing:border-box;z-index:1;"></div>
-        <img class="hero-bee-img" src="assest-3/hero-section-3.png" width="250" alt=""
-             style="display:block;position:absolute;right:10px;top:55px;width:250px;height:auto;z-index:2;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="position:relative;z-index:3;">
-
-          <!-- Logo -->
+      <td style="background-color:#FFF9E8;padding:0;
+                  background-image:linear-gradient(135deg,#111111 50%,transparent 50.5%),
+                                    url('https://email-template-lyart.vercel.app/assest-3/hero-section-bg.png');
+                  background-repeat:no-repeat,no-repeat;
+                  background-position:top left,top right;
+                  background-size:70px 70px,auto;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td style="padding:26px 30px 6px 30px;">
-              <img src="assest-3/Logo.jpg.png" width="158" alt="Beehive Web Solutions" style="display:block;">
-            </td>
-          </tr>
+            <td class="hero-left" width="320" valign="top" style="padding:0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 
-          <!-- Headline + text + button -->
-          <tr>
-            <td class="hero-pad" style="padding:18px 30px 80px 30px;">
-
-              <h1 class="h1-text"
-                  style="font-family:'Arial Black',Arial,Helvetica,sans-serif;
-                         font-size:36px;font-weight:900;color:#1a1a1a;
-                         line-height:1.15;margin:0 0 18px 0;padding:0;
-                         letter-spacing:-0.5px;max-width:300px;">
-                Get Discount<br><span style="color:#FFB800;">For Redesign</span>
-              </h1>
-
-              <p class="hero-copy" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;
-                         color:#444444;line-height:1.8;margin:0 0 22px 0;padding:0;
-                         max-width:280px;">
-                If you aren't actively getting good calls for your business,
-                your business is simply behind!
-              </p>
-
-              <p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;
-                         font-weight:800;color:#1a1a1a;letter-spacing:0.5px;
-                         text-transform:uppercase;margin:0 0 8px 0;padding:0;">
-                SIGN UP AT:
-              </p>
-
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <!-- Logo -->
                 <tr>
-                  <td style="background-color:#FFB800;border-radius:4px;">
-                    <a href="http://beehivewebsolutions.com"
-                       style="display:inline-block;font-family:Arial,Helvetica,sans-serif;
-                              font-size:13px;font-weight:800;color:#000000;
-                              text-decoration:none;padding:12px 28px;letter-spacing:0.3px;">
-                      http://beehivewebsolutions.com
-                    </a>
+                  <td style="padding:26px 30px 6px 30px;">
+                    <img src="https://email-template-lyart.vercel.app/assest-3/Logo.jpg.png" width="158" alt="Beehive Web Solutions" style="display:block;">
                   </td>
                 </tr>
+
+                <!-- Headline + text + button -->
+                <tr>
+                  <td class="hero-pad" style="padding:18px 30px 40px 30px;">
+
+                    <h1 class="h1-text"
+                        style="font-family:'Arial Black',Arial,Helvetica,sans-serif;
+                               font-size:36px;font-weight:900;color:#1a1a1a;
+                               line-height:1.15;margin:0 0 18px 0;padding:0;
+                               letter-spacing:-0.5px;max-width:300px;">
+                      Get Discount<br><span style="color:#1a1a1a;">For Redesign</span>
+                    </h1>
+
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px 0;">
+                      <tr>
+                        <td width="40" height="3" style="background:#FFB800;font-size:0;line-height:0;">&nbsp;</td>
+                      </tr>
+                    </table>
+
+                    <p class="hero-copy" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;
+                               color:#444444;line-height:1.8;margin:0 0 22px 0;padding:0;
+                               max-width:280px;">
+                      If you aren't actively getting good calls for your business,
+                      your business is simply behind!
+                    </p>
+
+                    <p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;
+                               font-weight:800;color:#1a1a1a;letter-spacing:0.5px;
+                               text-transform:uppercase;margin:0 0 8px 0;padding:0;">
+                      SIGN UP AT:
+                    </p>
+
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="background-color:#FFB800;border-radius:4px;">
+                          <a href="http://beehivewebsolutions.com"
+                             style="display:inline-block;font-family:Arial,Helvetica,sans-serif;
+                                    font-size:13px;font-weight:800;color:#000000;
+                                    text-decoration:none;padding:12px 28px;letter-spacing:0.3px;">
+                            http://beehivewebsolutions.com
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+
+                  </td>
+                </tr>
+
               </table>
+            </td>
 
-              <div class="hero-frame-mobile"
-                   style="display:none;width:180px;height:180px;border-radius:50%;
-                          border:4px solid #FFB800;box-sizing:border-box;margin:18px auto 0 auto;
-                          text-align:center;">
-                <img class="hero-bee-mobile" src="assest-3/hero-section-3.png" alt="Bee with laptop"
-                     style="display:block;width:150px;height:auto;margin:13px auto 0 auto;">
-              </div>
-
+            <td class="hero-right" width="280" valign="bottom" align="center" style="padding:0 8px 0 0;">
+              <img src="https://email-template-lyart.vercel.app/assest-3/hero-section-3.png" width="280" alt="Bee with laptop"
+                   style="display:block;width:280px;height:auto;margin:0 auto;">
             </td>
           </tr>
-
         </table>
       </td>
     </tr>
@@ -171,10 +178,10 @@
 
             </td>
 
-            <td class="vis-right" width="320" valign="middle"
-                style="padding:20px 18px 20px 0;text-align:right;vertical-align:middle;">
-              <img src="assest-3/more-visibilty-mokeup.png" width="320" alt="PPC performance dashboard with bee"
-                   style="display:block;width:100%;max-width:320px;height:auto;margin-left:auto;">
+            <td class="vis-right" width="320" valign="middle" align="center"
+                style="padding:20px 18px 20px 0;vertical-align:middle;">
+              <img src="https://email-template-lyart.vercel.app/assest-3/more-visibilty-mokeup.png" width="320" alt="PPC performance dashboard with bee"
+                   style="display:block;width:100%;max-width:320px;height:auto;margin:0 auto;">
             </td>
           </tr>
         </table>
@@ -187,16 +194,29 @@
          §3  P O S T
          ═══════════════════════════════════ -->
     <tr>
-      <td class="sp" style="background-color:#111111;padding:36px 28px 40px 28px;">
+      <td class="sp" style="background-color:#ffffff;padding:36px 28px 40px 28px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 
           <tr>
-            <td align="center" style="padding-bottom:22px;">
-              <span style="font-family:'Arial Black',Arial,Helvetica,sans-serif;
-                           font-size:22px;font-weight:900;color:#ffffff;">Blog</span>
-              <span style="font-family:'Arial Black',Arial,Helvetica,sans-serif;
-                           font-size:22px;font-weight:900;color:#FFB800;
-                           border-bottom:2px solid #FFB800;padding-bottom:4px;">Post</span>
+            <td style="padding-bottom:22px;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td valign="top">
+                    <span style="font-family:'Arial Black',Arial,Helvetica,sans-serif;
+                                 font-size:22px;font-weight:900;color:#000000;">Blog</span>
+                    <span style="font-family:'Arial Black',Arial,Helvetica,sans-serif;
+                                 font-size:22px;font-weight:900;color:#FFB800;">Post</span>
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:6px;">
+                      <tr>
+                        <td width="34" height="3" style="background:#FFB800;font-size:0;line-height:0;">&nbsp;</td>
+                      </tr>
+                    </table>
+                  </td>
+                  <td width="38" valign="top" align="right">
+                    <img src="https://email-template-lyart.vercel.app/assest/single-bee.png" width="34" alt="" style="display:block;">
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
 
@@ -204,14 +224,12 @@
 
             <!-- Mockup image -->
             <td class="blog-left" width="260" valign="top" style="padding-right:16px;vertical-align:top;">
-              <img src="assest-3/blog-post-mokeup.png" width="260" alt="Your Business, Better Results"
+              <img src="https://email-template-lyart.vercel.app/assest-3/blog-post-mokeup.png" width="260" alt="Your Business, Better Results"
                    style="display:block;width:100%;max-width:260px;height:auto;border-radius:12px;">
             </td>
 
             <!-- Post preview -->
             <td class="blog-right" width="284" valign="top" style="vertical-align:top;padding-left:0;">
-
-              <p style="margin:0 0 10px 0;padding:0;font-size:18px;line-height:1;">&#128029;</p>
 
               <span style="display:inline-block;background:#FFB800;color:#111111;
                            font-family:Arial,Helvetica,sans-serif;font-size:10px;font-weight:800;
@@ -219,12 +237,12 @@
                            margin-bottom:12px;">JAN 30, 2026</span>
 
               <p style="font-family:'Arial Black',Arial,Helvetica,sans-serif;font-size:16px;
-                         font-weight:900;color:#ffffff;line-height:1.3;margin:12px 0 10px 0;padding:0;
+                         font-weight:900;color:#000000;line-height:1.3;margin:12px 0 10px 0;padding:0;
                          max-width:260px;">
                 How Smart Website Refreshes Improve Lead Generation
               </p>
 
-              <p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#999999;
+              <p style="font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#7c7c7c;
                          line-height:1.6;margin:0 0 18px 0;padding:0;max-width:260px;">
                 Discover how a modern website refresh can boost your lead
                 generation and keep customers coming back.
@@ -257,13 +275,13 @@
          §4  N E E D   S O M E   E D I T S
          ═══════════════════════════════════ -->
     <tr>
-      <td class="sp" style="background-color:#111111;padding:0 28px 40px 28px;">
+      <td class="sp" style="background-color:#ffffff;padding:0 28px 40px 28px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td style="background-color:#FFB800;border-radius:16px;padding:0;position:relative;">
-              <img src="assest-3/edit-bar-bg.png" alt=""
-                   style="display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;border-radius:16px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="position:relative;z-index:1;">
+            <td class="cover-bg" style="background-color:#FFB800;border-radius:16px;padding:0;
+                        background-image:url('https://email-template-lyart.vercel.app/assest-3/edit-bar-bg.png');
+                        background-repeat:no-repeat;background-position:center;background-size:cover;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td class="edit-left" valign="middle" style="padding:24px 12px 24px 24px;vertical-align:middle;">
                     <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="left" class="edit-left-inner">
@@ -272,8 +290,9 @@
                           <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                             <tr>
                               <td width="44" height="44" align="center" valign="middle"
-                                  style="width:44px;height:44px;background:#111111;border-radius:12px;
-                                         font-size:18px;line-height:44px;text-align:center;">&#9998;</td>
+                                  style="width:44px;height:44px;border:2px solid #111111;
+                                         clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0% 50%);
+                                         font-size:18px;line-height:40px;text-align:center;color:#111111;">&#9998;</td>
                             </tr>
                           </table>
                         </td>
@@ -298,7 +317,7 @@
                         <td style="background-color:#111111;border-radius:30px;">
                           <a href="#"
                              style="display:inline-block;font-family:Arial,Helvetica,sans-serif;
-                                    font-size:11px;font-weight:800;color:#FFB800;
+                                    font-size:11px;font-weight:800;color:#ffffff;
                                     text-decoration:none;padding:12px 20px;letter-spacing:0.8px;
                                     white-space:nowrap;">
                             GO TO PAGE
@@ -354,7 +373,7 @@
           <!-- Testimonial graphic -->
           <tr>
             <td align="center">
-              <img src="assest-3/TESTIMONIAL.png" width="544" alt="Client testimonials"
+              <img src="https://email-template-lyart.vercel.app/assest-3/TESTIMONIAL.png" width="544" alt="Client testimonials"
                    style="display:block;width:100%;max-width:544px;height:auto;">
             </td>
           </tr>
@@ -369,14 +388,14 @@
          §6  F O O T E R
          ═══════════════════════════════════ -->
     <tr>
-      <td class="sp" style="background-color:#111111;padding:34px 28px 26px 28px;position:relative;">
-        <img src="assest-3/footer-background-imges.png" width="600" alt=""
-             style="display:block;position:absolute;top:0;left:0;width:100%;height:305px;z-index:0;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="position:relative;z-index:1;">
+      <td class="sp cover-bg" style="background-color:#111111;padding:34px 28px 26px 28px;
+                  background-image:url('https://email-template-lyart.vercel.app/assest-3/footer-background-imges.png');
+                  background-repeat:no-repeat;background-position:top left;background-size:cover;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 
           <tr>
             <td align="center" style="padding-bottom:16px;">
-              <img src="assest-3/Logo.png" width="178" alt="Beehive Web Solutions"
+              <img src="https://email-template-lyart.vercel.app/assest-3/Logo.png" width="178" alt="Beehive Web Solutions"
                    style="display:block;margin:0 auto;">
             </td>
           </tr>
@@ -415,7 +434,7 @@
                         <tr>
                           <td width="32" height="32" align="center" valign="middle"
                               style="width:32px;height:32px;background:#f9b400;border-radius:50%;">
-                            <img src="assest-3/social-facebook.png" width="22" height="22" alt="Facebook"
+                            <img src="https://email-template-lyart.vercel.app/assest-3/social-facebook.png" width="22" height="22" alt="Facebook"
                                  style="display:block;margin:0 auto;">
                           </td>
                         </tr>
@@ -428,7 +447,7 @@
                         <tr>
                           <td width="32" height="32" align="center" valign="middle"
                               style="width:32px;height:32px;background:#f9b400;border-radius:50%;">
-                            <img src="assest-3/social-instagram.png" width="22" height="22" alt="Instagram"
+                            <img src="https://email-template-lyart.vercel.app/assest-3/social-instagram.png" width="22" height="22" alt="Instagram"
                                  style="display:block;margin:0 auto;">
                           </td>
                         </tr>
@@ -441,7 +460,7 @@
                         <tr>
                           <td width="32" height="32" align="center" valign="middle"
                               style="width:32px;height:32px;background:#f9b400;border-radius:50%;">
-                            <img src="assest-3/social-twitter.png" width="22" height="22" alt="Twitter / X"
+                            <img src="https://email-template-lyart.vercel.app/assest-3/social-twitter.png" width="22" height="22" alt="Twitter / X"
                                  style="display:block;margin:0 auto;">
                           </td>
                         </tr>
@@ -454,7 +473,7 @@
                         <tr>
                           <td width="32" height="32" align="center" valign="middle"
                               style="width:32px;height:32px;background:#f9b400;border-radius:50%;">
-                            <img src="assest-3/social-pinterest.png" width="22" height="22" alt="Pinterest"
+                            <img src="https://email-template-lyart.vercel.app/assest-3/social-pinterest.png" width="22" height="22" alt="Pinterest"
                                  style="display:block;margin:0 auto;">
                           </td>
                         </tr>
