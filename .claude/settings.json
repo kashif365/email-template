@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp assest/footer-bg-img.png assest-2/footer-bg-img.png)",
+      "Bash(cp assest/footer-bg-img.png assest-3/footer-bg-img.png)",
+      "Bash(curl -s -o /dev/null -w \"assest: %{http_code}\\\\n\" \"https://email-template-lyart.vercel.app/assest/footer-bg-img.png\")",
+      "Bash(sed -i \"s#assest-3/footer-background-imges.png#assest-3/footer-bg-img.png#\" newsletter-1.html)",
+      "Bash(sed -i \"s#assest/footer-background-imges.png#assest/footer-bg-img.png#\" newsletter-2.html)",
+      "Bash(sed -i \"s#assest-2/footer-background-imges.png#assest-2/footer-bg-img.png#\" newsletter-3.html)",
+      "Bash(curl -s -o \"/d/Webfolder/Bee Email template/Newletter 2/vis-mockup-debug.png\" \"https://email-template-lyart.vercel.app/assest-3/more-visibilty-mokeup.png\")",
+      "Bash(python3 -c ' *)"
+    ]
+  }
+}
